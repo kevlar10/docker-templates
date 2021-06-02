@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-06-02</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>Snapcast-Server</Name>
+  <Project>https://mjaggard.github.io/snapcast/</Project>
+  <Changes>
+[center][img src='https://raw.githubusercontent.com/badaix/snapcast/master/doc/Snapcast_800.png'][/center]
+
+[center][font size=4]Snapcast-Server Change Log[/font][/center]
+
+[font size=3]2021.06.02[/font]
+- Initial Release (Snapcast Server version 2.0.124)
+
+[font size=3]2015.06.15[/font]
+- Initial Release (Sync version 0.25.0)
+  </Changes>
+  <Overview>
+    Snapcast is a multi-room client-server audio player.
+  </Overview>
+  <Description>
+    This build is intended to be used on Unraid with my Mopidy container.
+    Snapcast is a multi-room client-server audio player, where all clients are time synchronized with the server to play perfectly synced audio. It’s not a standalone player, but an extension that turns your existing audio player into a Sonos-like multi-room solution. The server’s audio input is a named pipe /tmp/snapfifo. All data that is fed into this file will be send to the connected clients. One of the most generic ways to use Snapcast is in conjunction with the music player daemon (MPD) or Mopidy, which can be configured to use a named pipe as audio output.
+  </Description>
+  <DockerHub>https://hub.docker.com/repository/docker/kevlar10/snapcast-server</Registry>
+  <GitHub>https://github.com/kevlar10/snapcast-server</GitHub>
+  <Repository>kevlar10/snapcast-server</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge: br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1704</HostPort>
+        <ContainerPort>1704</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1705</HostPort>
+        <ContainerPort>1705</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/tmp</HostDir>
+      <ContainerDir>/tmp</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/Snapcast_Icon.png</Icon>
+
+  <Network Default="bridge">bridge: br0</Network>
+
+  <Config Type="Port" Name="UDP Data Transfer Port" Target="1704" Default="1704" Mode="udp" Display="advanced-hide" Required="true"
+       Description="This is Snapcast's UDP port for data transfers.">1704</Config>
+
+  <Config Type="Port" Name="UDP Data Transfer Port" Target="1705" Default="1705" Mode="udp" Display="advanced-hide" Required="true"
+       Description="This is Snapcast's UDP port for data transfers.">1705</Config>
+  
+  <Config Type="Path" Name="Pipe Path" Target="/tmp" Default="/tmp" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Snapcast will look for a named pipe.">/tmp</Config>
+</Container>

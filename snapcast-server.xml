@@ -30,7 +30,7 @@
   <Privileged>false</Privileged>
   <Environment/>
   <Networking>
-    <Mode>bridge: br0</Mode>
+    <Mode>Custom : br0</Mode>
     <Publish>
       <Port>
         <HostPort>1704</HostPort>
@@ -53,7 +53,7 @@
   </Data>
   <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/Snapcast_Icon.png</Icon>
 
-  <Network Default="bridge">bridge: br0</Network>
+  <Network Default="custom">Custom : br0</Network>
 
   <Config Type="Port" Name="UDP Data Transfer Port" Target="1704" Default="1704" Mode="udp" Display="advanced-hide" Required="true"
        Description="This is Snapcast's UDP port for data transfers.">1704</Config>

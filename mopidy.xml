@@ -48,16 +48,23 @@
       <ContainerDir>/tmp</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+  </Data>
+  <Data>
+    <Volume>
     <Volume>
       <HostDir>/mnt/user/Media/Music</HostDir>
       <ContainerDir>/music</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+  </Data>
+  <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/mopidy/config</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
+  </Data>
+  <Data>
     <Volume>
       <HostDir>/mnt/user/appdata/mopidy/data</HostDir>
       <ContainerDir>/root/.local/share/mopidy</ContainerDir>

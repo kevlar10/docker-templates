@@ -11,10 +11,7 @@
 [center][font size=4]Snapcast-Server Change Log[/font][/center]
 
 [font size=3]2021.06.02[/font]
-- Initial Release (Snapcast Server version 2.0.124)
-
-[font size=3]2015.06.15[/font]
-- Initial Release (Sync version 0.25.0)
+- Initial Release (Snapcast Server version 0.25.0)
   </Changes>
   <Overview>
     Snapcast is a multi-room client-server audio player.

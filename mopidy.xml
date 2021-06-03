@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-06-02</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>Mopidy</Name>
+  <Project>https://mopidy.com/</Project>
+  <Changes>
+[center][img src='https://raw.githubusercontent.com/mopidy/mopidy/develop/docs/_static/mopidy.png'][/center]
+
+[center][font size=4]Mopidy Change Log[/font][/center]
+
+[font size=3]2021.06.02[/font]
+- Initial Release
+
+  </Changes>
+  <Overview>
+    Mopidy is an extensible music server written in Python.
+  </Overview>
+  <Description>
+    This build is intended to be used on Unraid.
+    Mopidy plays music from local disk, Spotify, SoundCloud, TuneIn, and more. You can edit the playlist from any phone, tablet, or computer using a variety of MPD and web clients.
+  </Description>
+  <Registry>https://hub.docker.com/repository/docker/kevlar10/mopidy</Registry>
+  <GitHub>https://github.com/kevlar10/mopidy</GitHub>
+  <Repository>kevlar10/mopidy</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>Custom : br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6600</HostPort>
+        <ContainerPort>6600</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>6680</HostPort>
+        <ContainerPort>6680</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/tmp</HostDir>
+      <ContainerDir>/tmp</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/Media/Music</HostDir>
+      <ContainerDir>/music</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mopidy/config</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/mopidy/data</HostDir>
+      <ContainerDir>/root/.local/share/mopidy</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/Snapcast_Icon.png</Icon>
+
+  <Network Default="custom">Custom : br0</Network>
+
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="6600" Default="6600" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="This is Mopidy's TCP port for MPD.">6600</Config>
+
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="6680" Default="6680" Mode="tcp" Display="advanced-hide" Required="true"
+       Description="This is Mopidy's TCP port for the WebUI.">6680</Config>
+  
+  <Config Type="Path" Name="tmp Path" Target="/tmp" Default="/tmp" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Mopidy will place the named pipe.">/tmp</Config>
+  
+  <Config Type="Path" Name="Music Path" Target="/mnt/user/Media/Music" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Mopidy will look for media.">/tmp</Config>
+  
+  <Config Type="Path" Name="Config Path" Target="/mnt/user/appdata/mopidy/config" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Mopidy will look for a config.">/tmp</Config>
+  
+  <Config Type="Path" Name="Data Path" Target="/mnt/user/appdata/mopidy" Default="/root/.local/share/mopidy" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Mopidy will store settings.">/tmp</Config>
+</Container>

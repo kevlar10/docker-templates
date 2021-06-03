@@ -64,7 +64,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/Snapcast_Icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/mopidy_icon.png</Icon>
 
   <Network Default="custom">Custom : br0</Network>
 

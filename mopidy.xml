@@ -28,7 +28,7 @@
   <Privileged>false</Privileged>
   <Environment/>
   <Networking>
-    <Mode>Custom : br0</Mode>
+    <Mode>br0</Mode>
     <Publish>
       <Port>
         <HostPort>6600</HostPort>
@@ -44,28 +44,22 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir>/tmp</HostDir>
+      <HostDir>/tmp/</HostDir>
       <ContainerDir>/tmp</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-  </Data>
-  <Data>
     <Volume>
-      <HostDir>/mnt/user/Media/Music</HostDir>
+      <HostDir>/mnt/user/Media/Music/</HostDir>
       <ContainerDir>/music</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-  </Data>
-  <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/mopidy/config</HostDir>
+      <HostDir>/mnt/user/appdata/mopidy/config/</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
-  </Data>
-  <Data>
     <Volume>
-      <HostDir>/mnt/user/appdata/mopidy/data</HostDir>
+      <HostDir>/mnt/user/appdata/mopidy/data/</HostDir>
       <ContainerDir>/root/.local/share/mopidy</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -74,21 +68,21 @@
 
   <Network Default="custom">Custom : br0</Network>
 
-  <Config Type="Port" Name="TCP Data Transfer Port" Target="6600" Default="6600" Mode="tcp" Display="advanced-hide" Required="true"
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="6600" Default="6600" Mode="tcp" Display="always" Required="true"
        Description="This is Mopidy's TCP port for MPD.">6600</Config>
 
-  <Config Type="Port" Name="TCP Data Transfer Port" Target="6680" Default="6680" Mode="tcp" Display="advanced-hide" Required="true"
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="6680" Default="6680" Mode="tcp" Display="always" Required="true"
        Description="This is Mopidy's TCP port for the WebUI.">6680</Config>
   
-  <Config Type="Path" Name="tmp Path" Target="/tmp" Default="/tmp" Mode="rw" Display="advanced-hide" Required="true"
+  <Config Type="Path" Name="tmp Path" Target="/tmp" Default="/tmp" Mode="rw" Display="always" Required="true"
        Description="This is where Mopidy will place the named pipe.">/tmp</Config>
   
-  <Config Type="Path" Name="Music Path" Target="/mnt/user/Media/Music" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
+  <Config Type="Path" Name="Music Path" Target="/music" Default="/mnt/user/Media/Music" Mode="rw" Display="always" Required="true"
        Description="This is where Mopidy will look for media.">/mnt/user/Media/Music</Config>
   
-  <Config Type="Path" Name="Config Path" Target="/mnt/user/appdata/mopidy/config" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
+  <Config Type="Path" Name="Config Path" Target="/config" Default="/mnt/user/appdata/mopidy/config" Mode="rw" Display="always" Required="true"
        Description="This is where Mopidy will look for a config.">/mnt/user/appdata/mopidy/config</Config>
   
-  <Config Type="Path" Name="Data Path" Target="/mnt/user/appdata/mopidy" Default="/root/.local/share/mopidy" Mode="rw" Display="advanced-hide" Required="true"
+  <Config Type="Path" Name="Data Path" Target="/root/.local/share/mopidy" Default="/mnt/user/appdata/mopidy" Mode="rw" Display="always" Required="true"
        Description="This is where Mopidy will store settings.">/mnt/user/appdata/mopidy</Config>
 </Container>

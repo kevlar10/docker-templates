@@ -69,20 +69,20 @@
   <Network Default="custom">Custom : br0</Network>
 
   <Config Type="Port" Name="TCP Data Transfer Port" Target="6600" Default="6600" Mode="tcp" Display="always" Required="true"
-       Description="This is Mopidy's TCP port for MPD.">6600</Config>
+       Description="Container port 6600">6600</Config>
 
   <Config Type="Port" Name="TCP Data Transfer Port" Target="6680" Default="6680" Mode="tcp" Display="always" Required="true"
-       Description="This is Mopidy's TCP port for the WebUI.">6680</Config>
+       Description="Container port 6680">6680</Config>
   
   <Config Type="Path" Name="tmp Path" Target="/tmp" Default="/tmp" Mode="rw" Display="always" Required="true"
-       Description="Container path: /tmp">/tmp</Config>
+       Description="Container path /tmp">/tmp</Config>
   
   <Config Type="Path" Name="Music Path" Target="/music" Default="/mnt/user/Media/Music" Mode="rw" Display="always" Required="true"
-       Description="Container path: /music">/mnt/user/Media/Music</Config>
+       Description="Container path /music">/mnt/user/Media/Music</Config>
   
   <Config Type="Path" Name="Config Path" Target="/config" Default="/mnt/user/appdata/mopidy/config" Mode="rw" Display="always" Required="true"
-       Description="Container path: /config">/mnt/user/appdata/mopidy/config</Config>
+       Description="Container path /config">/mnt/user/appdata/mopidy/config</Config>
   
-  <Config Type="Path" Name="Data Path" Target="/root/.local/share/mopidy" Default="/mnt/user/appdata/mopidy" Mode="rw" Display="always" Required="true"
-       Description="Container path: /root/.local/share/mopidy">/mnt/user/appdata/mopidy</Config>
+  <Config Type="Path" Name="Data Path" Target="/root/.local/share/mopidy" Default="/mnt/user/appdata/mopidy/data" Mode="rw" Display="always" Required="true"
+       Description="Container path /root/.local/share/mopidy">/mnt/user/appdata/mopidy/data</Config>
 </Container>

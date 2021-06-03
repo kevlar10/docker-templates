@@ -84,11 +84,11 @@
        Description="This is where Mopidy will place the named pipe.">/tmp</Config>
   
   <Config Type="Path" Name="Music Path" Target="/mnt/user/Media/Music" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Mopidy will look for media.">/tmp</Config>
+       Description="This is where Mopidy will look for media.">/mnt/user/Media/Music</Config>
   
   <Config Type="Path" Name="Config Path" Target="/mnt/user/appdata/mopidy/config" Default="/music" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Mopidy will look for a config.">/tmp</Config>
+       Description="This is where Mopidy will look for a config.">/mnt/user/appdata/mopidy/config</Config>
   
   <Config Type="Path" Name="Data Path" Target="/mnt/user/appdata/mopidy" Default="/root/.local/share/mopidy" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Mopidy will store settings.">/tmp</Config>
+       Description="This is where Mopidy will store settings.">/mnt/user/appdata/mopidy</Config>
 </Container>

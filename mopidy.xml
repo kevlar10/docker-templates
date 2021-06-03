@@ -51,7 +51,6 @@
   </Data>
   <Data>
     <Volume>
-    <Volume>
       <HostDir>/mnt/user/Media/Music</HostDir>
       <ContainerDir>/music</ContainerDir>
       <Mode>rw</Mode>

@@ -67,5 +67,5 @@
        Description="Container port 8090">8090</Config>
   
   <Config Type="Path" Name="Config Path" Target="/mnt/user/appdata/hyperion.ng/" Default="/root/.htperion" Mode="rw" Display="always" Required="true"
-       Description="Container path /root/.htperion">/tmp</Config>
+       Description="Container path /root/.htperion">/mnt/user/appdata/hyperion.ng/</Config>
 </Container>

@@ -27,7 +27,7 @@
   <Privileged>false</Privileged>
   <Environment/>
   <Networking>
-    <Mode>Custom : br0</Mode>
+    <Mode>br0</Mode>
     <Publish>
       <Port>
         <HostPort>1704</HostPort>
@@ -38,6 +38,11 @@
         <HostPort>1705</HostPort>
         <ContainerPort>1705</ContainerPort>
         <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1780</HostPort>
+        <ContainerPort>1780</ContainerPort>
+        <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
@@ -50,13 +55,16 @@
   </Data>
   <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/Snapcast_Icon.png</Icon>
 
-  <Network Default="custom">Custom : br0</Network>
+  <Network Default="custom">br0</Network>
 
-  <Config Type="Port" Name="UDP Data Transfer Port" Target="1704" Default="1704" Mode="udp" Display="advanced-hide" Required="true"
+  <Config Type="Port" Name="UDP Data Transfer Port" Target="1704" Default="1704" Mode="udp" Display="always" Required="true"
        Description="This is Snapcast's UDP port for data transfers.">1704</Config>
 
-  <Config Type="Port" Name="UDP Data Transfer Port" Target="1705" Default="1705" Mode="udp" Display="advanced-hide" Required="true"
+  <Config Type="Port" Name="UDP Data Transfer Port" Target="1705" Default="1705" Mode="udp" Display="always" Required="true"
        Description="This is Snapcast's UDP port for data transfers.">1705</Config>
+
+  <Config Type="Port" Name="TCP WebUI Port" Target="1780" Default="1780" Mode="tcp" Display="always" Required="true"
+       Description="This is Snapcast's WebUI port.">1780</Config>
   
   <Config Type="Path" Name="Pipe Path" Target="/tmp" Default="/tmp" Mode="rw" Display="advanced-hide" Required="true"
        Description="This is where Snapcast will look for a named pipe.">/tmp</Config>

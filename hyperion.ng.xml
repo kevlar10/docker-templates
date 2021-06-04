@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-06-03</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>Hyperion.ng</Name>
+  <Project>https://github.com/hyperion-project/hyperion.ng</Project>
+  <Changes>
+[center][img src='https://raw.githubusercontent.com/hyperion-project/hyperion.ng/master/doc/logo.png'][/center]
+
+[center][font size=4]Hyperion.ng Change Log[/font][/center]
+
+[font size=3]2021.06.02[/font]
+- Initial Release
+
+  </Changes>
+  <Overview>
+    Hyperion is an opensource Bias or Ambient Lighting implementation.
+  </Overview>
+  <Description>
+    Hyperion is an opensource Bias or Ambient Lighting implementation which you might know from TV manufacturers. It supports many LED devices and video grabbers. The project is still in a alpha development stage (no stable release available).
+  </Description>
+  <Registry>https://hub.docker.com/r/sirfragalot/hyperion.ng</Registry>
+  <GitHub>https://github.com/hyperion-project/hyperion.ng</GitHub>
+  <Repository>sirfragalot/hyperion.ng</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>br0</Mode>
+    <Publish>
+      <Port>
+        <HostPort>19445</HostPort>
+        <ContainerPort>19445</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>19444</HostPort>
+        <ContainerPort>19444</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>8090</HostPort>
+        <ContainerPort>8090</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/hyperion.ng/</HostDir>
+      <ContainerDir>/root/.htperion</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/hyperion.ng.png</Icon>
+
+  <Network Default="custom">Custom : br0</Network>
+
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="19445" Default="19445" Mode="tcp" Display="always" Required="true"
+       Description="Container port 19445">19445</Config>
+
+  <Config Type="Port" Name="TCP Data Transfer Port" Target="19444" Default="19444" Mode="tcp" Display="always" Required="true"
+       Description="Container port 19444">19444</Config>
+
+  <Config Type="Port" Name="TCP WebUI Port" Target="8090" Default="8090" Mode="tcp" Display="always" Required="true"
+       Description="Container port 8090">8090</Config>
+  
+  <Config Type="Path" Name="Config Path" Target="/mnt/user/appdata/hyperion.ng/" Default="/root/.htperion" Mode="rw" Display="always" Required="true"
+       Description="Container path /root/.htperion">/tmp</Config>
+</Container>

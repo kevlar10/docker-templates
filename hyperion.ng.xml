@@ -22,7 +22,7 @@
   </Description>
   <Registry>https://hub.docker.com/r/sirfragalot/hyperion.ng</Registry>
   <GitHub>https://github.com/hyperion-project/hyperion.ng</GitHub>
-  <Repository>sirfragalot/hyperion.ng</Repository>
+  <Repository>sirfragalot/hyperion.ng:2.0.0-alpha.9-x86_64</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>

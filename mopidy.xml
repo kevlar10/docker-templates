@@ -64,6 +64,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <WebUI>http://[IP]:[PORT:6680]/</WebUI>
   <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/mopidy_icon.png</Icon>
 
   <Network Default="custom">Custom : br0</Network>

@@ -22,7 +22,7 @@
   </Description>
   <Registry>https://hub.docker.com/r/sirfragalot/hyperion.ng</Registry>
   <GitHub>https://github.com/hyperion-project/hyperion.ng</GitHub>
-  <Repository>sirfragalot/hyperion.ng:2.0.0-alpha.9-x86_64</Repository>
+  <Repository>sirfragalot/hyperion.ng:2.0.0-alpha.10-x86_64</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment/>
@@ -53,6 +53,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <WebUI>http://[IP]:[PORT:8090]/</WebUI>
   <Icon>https://raw.githubusercontent.com/kevlar10/docker-templates/master/hyperion.ng.png</Icon>
 
   <Network Default="custom">Custom : br0</Network>
